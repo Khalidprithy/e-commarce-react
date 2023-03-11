@@ -1,0 +1,178 @@
+{
+  "products": [
+    {
+      "name": "Men's T-Shirt",
+      "description": "This is a Men's T-Shirt",
+      "category": "Fashion",
+      "subCategory": "Men",
+      "minOrder":5,
+      "sold":"20",
+      "discount":12,
+      "date": "2023-03-08T11:45:00Z",
+      "offer":false,
+      "price": 10.00,
+      "stock": 100,
+      "image": "https://example.com/men-tshirt.jpg",
+      "tags": ["t-shirt", "men's wear", "casual"],
+      "reviews": [
+        {
+          "name": "John Doe",
+          "comment": "This is a great T-shirt!",
+          "rating": 5,
+          "date": "2023-03-10T14:48:00Z"
+        },
+        {
+          "name": "Jane Doe",
+          "comment": "This T-shirt is okay.",
+          "rating": 3,
+          "date": "2023-03-09T11:23:00Z"
+        }
+      ]
+    },
+    {
+      "name": "Women's Dress",
+      "description": "This is a Women's Dress",
+      "category": "Fashion",
+      "subCategory": "Women",
+      "minOrder":5,
+      "sold":"20",
+      "discount":12,
+      "date": "2023-03-08T11:45:00Z",
+      "offer":false,
+      "price": 50.00,
+      "stock": 50,
+      "image": "https://example.com/women-dress.jpg",
+      "tags": ["dress", "women's wear", "formal"],
+      "reviews": [
+        {
+          "name": "John Smith",
+          "comment": "I love this dress!",
+          "rating": 5,
+          "date": "2023-03-08T16:12:00Z"
+        },
+        {
+          "name": "Jane Smith",
+          "comment": "This dress is not good.",
+          "rating": 2,
+          "date": "2023-03-05T09:45:00Z"
+        }
+      ]
+    },
+    {
+      "name": "Kid's T-Shirt",
+      "description": "This is a Kid's T-Shirt",
+      "category": "Fashion",
+      "subCategory": "Kids",
+      "minOrder":5,
+      "sold":"20",
+      "discount":12,
+      "date": "2023-03-08T11:45:00Z",
+      "offer":false,
+      "price": 5.00,
+      "stock": 150,
+      "image": "https://example.com/kids-tshirt.jpg",
+      "tags": ["t-shirt", "kids' wear", "casual"],
+      "reviews": [
+        {
+          "name": "John Smith",
+          "comment": "My kid loves this T-shirt!",
+          "rating": 5,
+          "date": "2023-03-08T16:12:00Z"
+        },
+        {
+          "name": "Jane Smith",
+          "comment": "This T-shirt is too small for my kid.",
+          "rating": 2,
+          "date": "2023-03-05T09:45:00Z"
+        }
+      ]
+    },
+    {
+      "name": "Salmon Fillet",
+      "description": "Fresh, wild-caught salmon, pan-seared to perfection.",
+      "category": "Food",
+      "subCategory": "Fish",
+      "minOrder":5,
+      "sold":"20",
+      "discount":12,
+      "date": "2023-03-08T11:45:00Z",
+      "offer":false,
+      "price": 15.00,
+      "stock": 100,
+      "image": "https://example.com/salmon.jpg",
+      "tags": ["salmon", "seafood", "healthy"],
+      "reviews": [
+        {
+          "name": "John Doe",
+          "comment": "This salmon is delicious!",
+          "rating": 5,
+          "date": "2023-03-10T14:48:00Z"
+        },
+        {
+          "name": "Jane Doe",
+          "comment": "This T-shirt is okay.",
+          "rating": 3,
+          "date": "2023-03-09T11:23:00Z"
+        }
+      ]
+    },
+    {
+      "name": "Cucumber",
+      "description": "This is a Kid's T-Shirt",
+      "category": "Food",
+      "subCategory": "Vegetables",
+      "minOrder":5,
+      "sold":"20",
+      "discount":12,
+      "date": "2023-03-08T11:45:00Z",
+      "offer":false,
+      "price": 5.00,
+      "stock": 150,
+      "image": "https://example.com/kids-tshirt.jpg",
+      "tags": ["t-shirt", "kids' wear", "casual"],
+      "reviews": [
+        {
+          "name": "John Smith",
+          "comment": "My kid loves this T-shirt!",
+          "rating": 5,
+          "date": "2023-03-08T16:12:00Z"
+        },
+        {
+          "name": "Jane Smith",
+          "comment": "This T-shirt is too small for my kid.",
+          "rating": 2,
+          "date": "2023-03-05T09:45:00Z"
+        }
+      ]
+    },
+    {
+      "name": "Mangoes",
+      "description": "This is a Kid's T-Shirt",
+      "category": "Food",
+      "subCategory": "Fruits",
+      "minOrder":5,
+      "sold":"20",
+      "discount":12,
+      "date": "2023-03-08T11:45:00Z",
+      "offer":false,
+      "price": 5.00,
+      "stock": 150,
+      "image": "https://example.com/kids-tshirt.jpg",
+      "tags": ["t-shirt", "kids' wear", "casual"],
+      "reviews": [
+        {
+          "name": "John Smith",
+          "comment": "My kid loves this T-shirt!",
+          "rating": 5,
+          "date": "2023-03-08T16:12:00Z"
+        },
+        {
+          "name": "Jane Smith",
+          "comment": "This T-shirt is too small for my kid.",
+          "rating": 2,
+          "date": "2023-03-05T09:45:00Z"
+        }
+      ]
+    }
+  ]
+}
