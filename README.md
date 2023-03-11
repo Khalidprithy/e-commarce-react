@@ -4,13 +4,13 @@
 <br />
 <div align="center">
 
-<h1 align="center">React Starter Template with React Router v6 and Tailwind CSS</h1>
+<h1 align="center">something.com</h1>
 
   <a href="https://devkbin.netlify.app/">
-    <img src="https://cdn-icons-png.flaticon.com/512/1183/1183621.png" alt="Logo" width="80" height="80">
+    <img src="" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">React React-router-dom Tailwind Pre installed</h3>
+<h3 align="center">E-commerce</h3>
 
   <p align="center">
     Project Description
@@ -46,7 +46,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a starter template for React projects that includes React, React Router v6 and Tailwind CSS pre-installed. It is intended to provide a quick and easy way for developers to start building React applications without having to worry about setting up these basic dependencies.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -81,11 +80,7 @@ To get started with this template, you'll need to have Node.js and npm installed
    ```sh
    npm install
    ```
-3. If shows any error
-   ```sh
-   npm install --f
-   ```
-4. Start the development server by running the following command:
+3. Start the development server by running the following command:
    ```sh
    npm start
    ```
@@ -95,13 +90,6 @@ To get started with this template, you'll need to have Node.js and npm installed
 
 ### Features
 
-This starter template comes with the following features pre-installed:
-
-* React: A JavaScript library for building user interfaces.
-
-* React Router v6: A library for handling routing in React applications.
-
-* Tailwind CSS: A utility-first CSS framework for rapidly building custom user interfaces.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
