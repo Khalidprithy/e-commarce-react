@@ -17,7 +17,7 @@ function App() {
       <Header />
       <div className="flex">
         <Sidebar />
-        <main className="ml-16 md:ml-40 transition-all ease-in-out duration-500">
+        <main className="mt-16 ml-16 md:ml-40 transition-all ease-in-out duration-500">
           <Router />
         </main>
 

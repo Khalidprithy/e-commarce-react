@@ -4,7 +4,7 @@ import { BsFillCartPlusFill } from 'react-icons/bs';
 
 const Header = () => {
     return (
-        <div className='sticky top-0 h-16 z-50 bg-gray-800 shadow-md shadow-gray-600'>
+        <div className='fixed top-0 left-0 right-0 h-16 z-50 bg-gray-800 shadow-md shadow-gray-600'>
             <div className="navbar bg-gray-800 hover:bg-gray-800 px-2">
                 <div className="w-full flex items-center justify-between gap-2 px-2">
 
