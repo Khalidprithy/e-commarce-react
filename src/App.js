@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Toaster } from "react-hot-toast";
 import CartSide from "./global/CartSide";
 import Header from "./global/Header";
 import Sidebar from "./global/Sidebar";
@@ -19,6 +20,7 @@ function App() {
         <Sidebar />
         <main className="mt-16 ml-16 md:ml-40 transition-all ease-in-out duration-500">
           <Router />
+          <Toaster />
         </main>
 
         <button

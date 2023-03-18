@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
+import { MyContext } from '../context/AppContext';
 
 const LoginModal = () => {
 
@@ -9,19 +10,24 @@ const LoginModal = () => {
         mode: 'onTouched'
     });
 
-    const onSubmit = (data) => {
-        console.log(data); // replace with your logic to handle form submission
-    };
-
+    const { handleSignUp } = useContext(MyContext);
 
     return (
         <>
             <input type="checkbox" id="open-login-modal" className="modal-toggle" />
             <div className="modal backdrop-blur-sm">
-                <div className="modal-box relative rounded-md">
+                <div className="modal-box relative rounded-md bg-white/40 backdrop-blur-xl">
                     <label htmlFor="open-login-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <div className='mt-10'>
-                        <form onSubmit={handleSubmit(onSubmit)}>
+                        <div class="p-5">
+                            <div class="grid grid-cols-3 gap-1">
+                                <button type="button" class="transition duration-200 border border-gray-300 bg-gray-300 text-gray-700 w-full py-2.5 rounded-lg text-md font-semibold shadow-sm hover:shadow-md text-center inline-block">Twitter</button>
+                                <button type="button" class="transition duration-200 border border-gray-300 bg-gray-300 text-gray-700 w-full py-2.5 rounded-lg text-md font-semibold shadow-sm hover:shadow-md text-center inline-block">Google</button>
+                                <button type="button" class="transition duration-200 border border-gray-300 bg-gray-300 text-gray-700 w-full py-2.5 rounded-lg text-md font-semibold shadow-sm hover:shadow-md text-center inline-block">Facebook</button>
+                            </div>
+                        </div>
+                        <div className="divider">OR</div>
+                        <form onSubmit={handleSubmit(handleSignUp)}>
                             <div className="form-control w-full">
                                 <input
                                     type="text"
@@ -82,7 +88,7 @@ const LoginModal = () => {
                                 </label>
                             </div>
 
-                            <button type="submit">Submit</button>
+                            <button type="submit" className='btn btn-outline w-full'>Login</button>
                         </form>
                     </div>
                 </div>

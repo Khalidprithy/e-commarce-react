@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AiFillShop } from 'react-icons/ai';
 import { BsTools } from 'react-icons/bs';
@@ -8,11 +8,12 @@ import { FaChild, FaTools } from 'react-icons/fa';
 import { FcBusinessman, FcBusinesswoman } from 'react-icons/fc';
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import 'react-perfect-scrollbar/dist/css/styles.css';
+import { MyContext } from '../context/AppContext';
 
 const Sidebar = () => {
 
-
-    const [isAuth, setIsAuth] = useState(false);
+    const { user, handleLogout } = useContext(MyContext);
+    console.log(user)
 
     const mainMenu = [
         { name: 'Home', path: '/', icon: AiFillShop, color: '#D35400 ' },
@@ -27,7 +28,6 @@ const Sidebar = () => {
         { name: 'Fish', path: '/fish', icon: GiCirclingFish, color: '#229954' },
         { name: 'Fruits', path: '/fruits', icon: GiFruitBowl, color: '#D35400 ' }
     ]
-
 
 
     return (
@@ -49,11 +49,11 @@ const Sidebar = () => {
                             <GiOpenedFoodCan className='text-2xl mr-3 text-orange-600' />
                             <span className='font-semibold hidden md:block'>Foods</span>
                         </div>
-                        <div className="collapse-content pl-0 text-primary-content rounded-lg peer-checked:bg-gray-700 peer-checked:text-secondary-content">
+                        <div className="collapse-content pl-0 rounded-lg peer-checked:bg-gray-700">
 
                             {foodMenu.map((menu) =>
                                 <li>
-                                    <Link to={menu?.path} className="flex items-center justify-left px-3 py-3 text-base font-normal text-gray-100 rounded-md hover:text-gray-700 dark:text-white hover:dark:text-gray-200 hover:bg-gray-500 dark:hover:bg-gray-700">
+                                    <Link to={menu?.path} className="flex items-center justify-left w-12 md:w-36 px-3 py-3 text-base font-normal text-gray-100 rounded-md hover:text-gray-700 dark:text-white hover:dark:text-gray-200 hover:bg-gray-500 dark:hover:bg-gray-700">
                                         {React.createElement(menu.icon, { className: `text-2xl`, style: { color: menu.color } })}  <span className="font-semibold hidden md:block">{menu.name}</span>
                                     </Link>
                                 </li>)}
@@ -75,7 +75,7 @@ const Sidebar = () => {
                     <li className='fixed bottom-0 left-0 w-16 md:w-40 z-40 p-1 bg-gray-600'>
                         <>
                             {
-                                isAuth ?
+                                !user ?
                                     <label
                                         // onClick={() => setIsAuth(!isAuth)}
                                         htmlFor="open-login-modal" className="btn">
@@ -83,12 +83,12 @@ const Sidebar = () => {
                                         <span className='font-semibold hidden md:block text-gray-100'>Login</span>
                                     </label>
                                     :
-                                    <Link
-                                        onClick={() => setIsAuth(!isAuth)}
-                                        to="/login" className="flex items-center justify-left mx-auto px-3 py-3 text-base font-normal text-gray-100 rounded-md hover:text-red-400 dark:text-white hover:dark:text-gray-200 hover:bg-gray-600 dark:hover:bg-gray-700">
+                                    <button
+                                        onClick={handleLogout}
+                                        className="flex items-center justify-left mx-auto px-3 py-3 text-base font-normal text-gray-100 rounded-md hover:text-red-400 dark:text-white hover:dark:text-gray-200 hover:bg-gray-600 dark:hover:bg-gray-700">
                                         <RiLogoutCircleLine className='text-2xl text-red-400' />
                                         <span className='font-semibold hidden md:block'>Logout</span>
-                                    </Link>
+                                    </button>
                             }
                         </>
                     </li>
