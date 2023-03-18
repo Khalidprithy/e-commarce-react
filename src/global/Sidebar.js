@@ -1,96 +1,96 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AiFillShop } from 'react-icons/ai';
-import { RiLogoutCircleLine } from 'react-icons/ri';
+import { BsTools } from 'react-icons/bs';
+import { RiLogoutCircleLine, RiLoginCircleLine } from 'react-icons/ri';
 import { GiOpenedFoodCan, GiFruitBowl, GiCirclingFish, GiMeat, GiCabbage } from 'react-icons/gi';
-import { FaChild } from 'react-icons/fa';
-import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
+import { FaChild, FaTools } from 'react-icons/fa';
 import { FcBusinessman, FcBusinesswoman } from 'react-icons/fc';
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import 'react-perfect-scrollbar/dist/css/styles.css';
-import './Sidebar.css'
 
 const Sidebar = () => {
+
+
+    const [isAuth, setIsAuth] = useState(false);
+
+    const mainMenu = [
+        { name: 'Home', path: '/', icon: AiFillShop, color: '#D35400 ' },
+        { name: 'Man', path: '/man', icon: FcBusinessman, color: '#D35400 ' },
+        { name: 'Woman', path: '/woman', icon: FcBusinesswoman, color: '#D35400 ' },
+        { name: 'Kids', path: '/kids', icon: FaChild, color: '#28B463 ' }
+    ];
+
+    const foodMenu = [
+        { name: 'Vegetables', path: '/vegetables', icon: GiCabbage, color: '#17A589' },
+        { name: 'Meat', path: '/meat', icon: GiMeat, color: '#D35400 ' },
+        { name: 'Fish', path: '/fish', icon: GiCirclingFish, color: '#229954' },
+        { name: 'Fruits', path: '/fruits', icon: GiFruitBowl, color: '#D35400 ' }
+    ]
+
+
+
     return (
-        <div className='fixed z-40 menu p-2 mt-16 w-16 md:w-40 h-[calc(100vh-64px)] bg-gray-800 pt-5 text-base-content transition-all ease-in-out duration-500'>
+        <div className='fixed z-40 menu p-2 mt-16 pb-16 w-16 md:w-40 h-[calc(100vh-64px)] bg-gray-800 pt-5 text-base-content transition-all ease-in-out duration-500'>
             <PerfectScrollbar>
                 <ul>
-                    <li>
-                        <Link to="/" className="flex items-center justify-left px-3 py-3 text-base font-normal text-gray-100 rounded-md hover:text-gray-700 dark:text-white hover:dark:text-gray-200 hover:bg-gray-500 dark:hover:bg-gray-700">
-                            <AiFillShop className='text-2xl text-orange-400' />
-                            <span className='font-semibold hidden md:block'>Home</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/man" className="flex items-center justify-left px-3 py-3 text-base font-normal text-gray-100 rounded-md hover:text-gray-700 dark:text-white hover:dark:text-gray-200 hover:bg-gray-500 dark:hover:bg-gray-700">
-                            <FcBusinessman className='text-2xl' />
-                            <span className='font-semibold hidden md:block'>Man</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/woman" className="flex items-center justify-left px-3 py-3 text-base font-normal text-gray-100 rounded-md hover:text-gray-700 dark:text-white hover:dark:text-gray-200 hover:bg-gray-500 dark:hover:bg-gray-700">
-                            <FcBusinesswoman className='text-2xl' />
-
-                            <span className='font-semibold hidden md:block'>Woman</span>
-                        </Link>
-                    </li>
-
-                    <li>
-                        <Link to="/kids" className="flex items-center justify-left px-3 py-3 text-base font-normal text-gray-100 rounded-md hover:text-gray-700 dark:text-white hover:dark:text-gray-200 hover:bg-gray-500 dark:hover:bg-gray-700">
-                            <FaChild className='text-2xl text-orange-600' />
-
-                            <span className='font-semibold hidden md:block'>Kids</span>
-                        </Link>
-                    </li>
+                    {mainMenu.map((menu) =>
+                        <li>
+                            <Link to={menu?.path} className="flex items-center justify-left px-3 py-3 text-base font-normal text-gray-100 rounded-md hover:text-gray-700 dark:text-white hover:dark:text-gray-200 hover:bg-gray-500 dark:hover:bg-gray-700">
+                                {React.createElement(menu.icon, { className: `text-2xl`, style: { color: menu.color } })} <span className="font-semibold hidden md:block">{menu.name}</span>
+                            </Link>
+                        </li>)}
 
                     <div className='my-2 bg-gray-100 h-[1px] w-full'></div>
 
-                    <li>
-                        <Link to="/foods" className="flex items-center justify-left px-3 py-3 text-base font-normal text-gray-100 rounded-md hover:text-gray-700 dark:text-white hover:dark:text-gray-200 hover:bg-gray-500 dark:hover:bg-gray-700">
-                            <GiOpenedFoodCan className='text-2xl text-orange-600' />
+                    <div className="collapse ml-0 md:collapse-arrow bg-base-700 w-12 md:w-full rounded-md">
+                        <input type="checkbox" className="peer" />
+                        <div className="collapse-title flex items-center bg-gray-800 py-2 text-base font-normal text-gray-100 rounded-md">
+                            <GiOpenedFoodCan className='text-2xl mr-3 text-orange-600' />
                             <span className='font-semibold hidden md:block'>Foods</span>
-                            <MdOutlineKeyboardArrowDown className='text-2xl text-orange-600 hidden md:block' />
+                        </div>
+                        <div className="collapse-content pl-0 text-primary-content rounded-lg peer-checked:bg-gray-700 peer-checked:text-secondary-content">
 
-                        </Link>
-                    </li>
+                            {foodMenu.map((menu) =>
+                                <li>
+                                    <Link to={menu?.path} className="flex items-center justify-left px-3 py-3 text-base font-normal text-gray-100 rounded-md hover:text-gray-700 dark:text-white hover:dark:text-gray-200 hover:bg-gray-500 dark:hover:bg-gray-700">
+                                        {React.createElement(menu.icon, { className: `text-2xl`, style: { color: menu.color } })}  <span className="font-semibold hidden md:block">{menu.name}</span>
+                                    </Link>
+                                </li>)}
+                        </div>
+                    </div>
 
-                    <li>
-                        <Link to="/kids" className="flex items-center justify-left px-3 py-3 text-base font-normal text-gray-100 rounded-md hover:text-gray-700 dark:text-white hover:dark:text-gray-200 hover:bg-gray-500 dark:hover:bg-gray-700">
-                            <GiCabbage className='text-2xl text-green-600' />
-
-                            <span className='font-semibold hidden md:block'>Vegetables</span>
-                        </Link>
-                    </li>
-
-                    <li>
-                        <Link to="/kids" className="flex items-center justify-left px-3 py-3 text-base font-normal text-gray-100 rounded-md hover:text-gray-700 dark:text-white hover:dark:text-gray-200 hover:bg-gray-500 dark:hover:bg-gray-700">
-                            <GiMeat className='text-2xl text-red-500' />
-
-                            <span className='font-semibold hidden md:block'>Meat</span>
-                        </Link>
-                    </li>
 
                     <li>
-                        <Link to="/kids" className="flex items-center justify-left px-3 py-3 text-base font-normal text-gray-100 rounded-md hover:text-gray-700 dark:text-white hover:dark:text-gray-200 hover:bg-gray-500 dark:hover:bg-gray-700">
-                            <GiCirclingFish className='text-2xl text-teal-600' />
+                        <Link to="/kids" className="flex items-center justify-left px-3 py-3 mt-1 text-base font-normal text-gray-100 rounded-md hover:text-gray-700 dark:text-white hover:dark:text-gray-200 hover:bg-gray-500 dark:hover:bg-gray-700">
+                            <BsTools className='text-xl text-teal-500' />
 
-                            <span className='font-semibold hidden md:block'>Fish</span>
+                            <span className='font-semibold hidden md:block'>Tools</span>
                         </Link>
                     </li>
 
-                    <li>
-                        <Link to="/kids" className="flex items-center justify-left px-3 py-3 text-base font-normal text-gray-100 rounded-md hover:text-gray-700 dark:text-white hover:dark:text-gray-200 hover:bg-gray-500 dark:hover:bg-gray-700">
-                            <GiFruitBowl className='text-2xl text-blue-600' />
 
-                            <span className='font-semibold hidden md:block'>Fruits</span>
-                        </Link>
-                    </li>
+                    {/* Logout button */}
 
                     <li className='fixed bottom-0 left-0 w-16 md:w-40 z-40 p-1 bg-gray-600'>
-                        <Link to="/login" className="flex items-center justify-left mx-auto px-3 py-3 text-base font-normal text-gray-100 rounded-md hover:text-red-400 dark:text-white hover:dark:text-gray-200 hover:bg-gray-600 dark:hover:bg-gray-700">
-                            <RiLogoutCircleLine className='text-2xl text-red-400' />
-                            <span className='font-semibold hidden md:block'>Logout</span>
-                        </Link>
+                        <>
+                            {
+                                isAuth ?
+                                    <label
+                                        // onClick={() => setIsAuth(!isAuth)}
+                                        htmlFor="open-login-modal" className="btn">
+                                        <RiLoginCircleLine className='text-2xl text-red-400' />
+                                        <span className='font-semibold hidden md:block text-gray-100'>Login</span>
+                                    </label>
+                                    :
+                                    <Link
+                                        onClick={() => setIsAuth(!isAuth)}
+                                        to="/login" className="flex items-center justify-left mx-auto px-3 py-3 text-base font-normal text-gray-100 rounded-md hover:text-red-400 dark:text-white hover:dark:text-gray-200 hover:bg-gray-600 dark:hover:bg-gray-700">
+                                        <RiLogoutCircleLine className='text-2xl text-red-400' />
+                                        <span className='font-semibold hidden md:block'>Logout</span>
+                                    </Link>
+                            }
+                        </>
                     </li>
                 </ul>
             </PerfectScrollbar>

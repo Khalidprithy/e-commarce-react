@@ -22,7 +22,7 @@ function App() {
         </main>
 
         <button
-          className="fixed top-32 right-0 rounded-l-lg z-30 bg-gray-300 hover:bg-gray-800 hover:text-gray-50 px-2 py-1 drawer-button transition-all ease-in duration-150 text-center"
+          className="fixed top-32 right-0 rounded-l-lg z-30 bg-gray-300 hover:bg-gray-800 hover:text-gray-50 px-2 py-1 drawer-button transition-all ease-in duration-150 text-center shadow-lg"
           onClick={toggleDrawer}
         >
           <h4>Items: 0</h4>

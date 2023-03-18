@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import LoginModal from '../global/LoginModal';
 import Foods from '../Pages/Foods/Foods';
 import Home from '../Pages/Home/Home';
 import Kids from '../Pages/Kids/Kids';
@@ -16,6 +17,8 @@ const Router = () => {
                 <Route path="/kids" element={<Kids />}></Route>
                 <Route path="/foods" element={<Foods />}></Route>
             </Routes>
+
+            <LoginModal />
         </>
     );
 };
