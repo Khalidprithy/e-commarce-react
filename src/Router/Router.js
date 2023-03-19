@@ -5,6 +5,7 @@ import Foods from '../Pages/Foods/Foods';
 import Home from '../Pages/Home/Home';
 import Kids from '../Pages/Kids/Kids';
 import Man from '../Pages/Man/Man';
+import UserProfile from '../Pages/Profile/UserProfile';
 import Woman from '../Pages/Woman/Woman';
 
 const Router = () => {
@@ -16,6 +17,7 @@ const Router = () => {
                 <Route path="/woman" element={<Woman />}></Route>
                 <Route path="/kids" element={<Kids />}></Route>
                 <Route path="/foods" element={<Foods />}></Route>
+                <Route path="/profile" element={<UserProfile />}></Route>
             </Routes>
 
             <LoginModal />

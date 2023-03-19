@@ -6,7 +6,6 @@ const SpecialOffer = () => {
 
     const { data } = useContext(MyContext);
 
-    console.log(data)
     return (
         <div>
             <h4 className='text-lg font-semibold p-2'>Special Offers</h4>

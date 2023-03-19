@@ -12,8 +12,7 @@ import { MyContext } from '../context/AppContext';
 
 const Sidebar = () => {
 
-    const { user, handleLogout } = useContext(MyContext);
-    console.log(user)
+    const { userToken, handleLogout } = useContext(MyContext);
 
     const mainMenu = [
         { name: 'Home', path: '/', icon: AiFillShop, color: '#D35400 ' },
@@ -63,7 +62,12 @@ const Sidebar = () => {
 
                     <li>
                         <Link to="/kids" className="flex items-center justify-left px-3 py-3 mt-1 text-base font-normal text-gray-100 rounded-md hover:text-gray-700 dark:text-white hover:dark:text-gray-200 hover:bg-gray-500 dark:hover:bg-gray-700">
-                            <BsTools className='text-xl text-teal-500' />
+                            <lord-icon
+                                src="https://cdn.lordicon.com/hbigeisx.json"
+                                trigger="hover"
+                                colors="primary:#e86830"
+                                style={{ width: "25px", height: "25px" }}>
+                            </lord-icon>
 
                             <span className='font-semibold hidden md:block'>Tools</span>
                         </Link>
@@ -75,7 +79,7 @@ const Sidebar = () => {
                     <li className='fixed bottom-0 left-0 w-16 md:w-40 z-40 p-1 bg-gray-600'>
                         <>
                             {
-                                !user ?
+                                !userToken ?
                                     <label
                                         // onClick={() => setIsAuth(!isAuth)}
                                         htmlFor="open-login-modal" className="btn">

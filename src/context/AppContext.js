@@ -22,7 +22,6 @@ function MyContextProvider(props) {
 
     // Login
     const handleLogin = async (data) => {
-
         const userInfo = {
             email: data.email,
             password: data.password,
@@ -37,16 +36,16 @@ function MyContextProvider(props) {
             body: JSON.stringify(userInfo)
         })
         const userData = await response.json();
-        console.log(userData)
+        console.log('Inside Login', userData)
         if (response.status === 200) {
+            setUser(userData)
+            setTempUser(userData)
             setUserToken(userData.token)
-            setUser(userData.userdetals)
-            setTempUser(userData.userdetals)
-            localStorage.setItem('kinboUser', JSON.stringify(userData.userdetals))
+            localStorage.setItem('kinboUser', JSON.stringify(userData))
             localStorage.setItem('userToken', JSON.stringify(userData.token))
             navigate('/')
         } else {
-            toast.error('Login Failed')
+            toast.error(userData.message)
         }
     }
 
@@ -71,35 +70,33 @@ function MyContextProvider(props) {
         const userData = await response.json();
         console.log(userData);
         if (response.status === 201) {
-            setUserToken(userData.token)
             setUser(userData.token)
+            setUserToken(userData.token)
             localStorage.setItem('userToken', JSON.stringify(userData.token))
-            navigate('/')
+            navigate('/');
+            toast.success(userData.message)
         } else {
-            toast(userData.message)
+            toast.error(userData.message)
         }
         e.target.reset();
     }
-
-
 
 
     // Logout user function
     const handleLogout = async () => {
         setUser(null)
         setUserToken(null)
-        localStorage.removeItem('userInfo');
+        localStorage.removeItem('kinboUser');
         localStorage.removeItem('userToken');
         navigate('/');
     }
 
-
-
-
-
     const contextValue = {
         data,
         user,
+        error,
+        tempUser,
+        userToken,
         isLoading,
         handleLogin,
         handleSignUp,

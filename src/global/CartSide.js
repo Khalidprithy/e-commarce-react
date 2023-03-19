@@ -21,8 +21,15 @@ const CartSide = ({ cartOpen, toggleDrawer }) => {
                 <p className="p-4 text-lg text-gray-100 font-medium text-center">Please add some Items</p>
                 <button
                     onClick={toggleDrawer}
-                    className='btn btn-sm btn-circle absolute top-20 left-2 text-gray-100'
-                >X</button>
+                    className='absolute top-20 left-2'
+                ><lord-icon
+                    src="https://cdn.lordicon.com/nhfyhmlt.json"
+                    trigger="hover"
+                    colors="primary:#ee6d66"
+                    state="hover-2"
+                    style={{ width: "35px", height: "35px" }}>
+                    </lord-icon></button>
+
             </div>
         </div>
     );
