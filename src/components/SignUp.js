@@ -67,11 +67,11 @@ const SignUp = () => {
                             }
                         })}
                     />
-                    <div className='text-2xl absolute top-3 right-2'>
+                    <button className='text-2xl absolute top-3 right-2 cursor-pointer'>
                         {
                             (passwordShow === false) ? <AiFillEyeInvisible onClick={() => setPasswordShow(!passwordShow)}></AiFillEyeInvisible> : <AiFillEye onClick={() => setPasswordShow(!passwordShow)}></AiFillEye>
                         }
-                    </div>
+                    </button>
                     <label className="label">
                         {errors.password && <span className="label-text text-base font-sem text-red-700">{errors.password.message}</span>}
                     </label>

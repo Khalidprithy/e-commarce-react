@@ -22,14 +22,25 @@ const CartSide = ({ cartOpen, toggleDrawer }) => {
                 <button
                     onClick={toggleDrawer}
                     className='absolute top-20 left-2'
-                ><lord-icon
-                    src="https://cdn.lordicon.com/nhfyhmlt.json"
-                    trigger="hover"
-                    colors="primary:#ee6d66"
-                    state="hover-2"
-                    style={{ width: "35px", height: "35px" }}>
-                    </lord-icon></button>
+                >
+                    <lord-icon
+                        src="https://cdn.lordicon.com/nhfyhmlt.json"
+                        trigger="hover"
+                        colors="primary:#ee6d66"
+                        state="hover-2"
+                        style={{ width: "35px", height: "35px" }}>
+                    </lord-icon>
+                </button>
 
+
+                <button className='btn bg-primary hover:bg-orange-600 text-gray-800 text-lg capitalize font-semibold border-none w-full rounded-t-xl rounded-b-none absolute bottom-0'>
+                    Place Order
+                    <lord-icon
+                        src="https://cdn.lordicon.com/ggihhudh.json"
+                        trigger="hover"
+                        style={{ width: "35px", height: "35px" }}>
+                    </lord-icon>
+                </button>
             </div>
         </div>
     );

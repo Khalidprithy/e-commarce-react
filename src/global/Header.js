@@ -18,11 +18,11 @@ const Header = () => {
                             style={{ width: "50px", height: "50px" }}>
                         </lord-icon>
                         Kinbo
-                        <lord-icon
-                            src="https://cdn.lordicon.com/xplwhusq.json"
+                        {/* <lord-icon
+                            src="https://cdn.lordicon.com/ggihhudh.json"
                             trigger="hover"
                             style={{ width: "50px", height: "50px" }}>
-                        </lord-icon>
+                        </lord-icon> */}
                     </Link>
 
                     <div className="form-control w-6/12">
@@ -31,7 +31,7 @@ const Header = () => {
 
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-12 rounded-full border border-gray-300">
+                            <div className="w-12 rounded-full border border-orange-500">
                                 {
                                     tempUser?.profilePicture ?
                                         <img src={tempUser?.profilePicture} alt='' />

@@ -12,7 +12,6 @@ const Login = () => {
 
     const { handleLogin } = useContext(MyContext);
 
-
     return (
         <>
             <h4 className='text-xl mb-2 text-center font-bold text-gray-700'>Login</h4>
@@ -51,17 +50,19 @@ const Login = () => {
                             }
                         })}
                     />
-                    <div className='text-2xl absolute top-3 right-2'>
+                    <button className='text-2xl absolute top-3 right-2'>
                         {
                             (passwordShow === false) ? <AiFillEyeInvisible onClick={() => setPasswordShow(!passwordShow)}></AiFillEyeInvisible> : <AiFillEye onClick={() => setPasswordShow(!passwordShow)}></AiFillEye>
                         }
-                    </div>
+                    </button>
                     <label className="label">
                         {errors.password && <span className="label-text text-base font-sem text-red-700">{errors.password.message}</span>}
                     </label>
                 </div>
 
-                <button type="submit" className='btn btn-outline w-full'>Login</button>
+                <button type="submit"
+                    htmlFor="open-login-modal"
+                    className='btn btn-outline w-full'>Login</button>
             </form>
         </>
     );
